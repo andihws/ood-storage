@@ -1,0 +1,32 @@
+:root { --bg:#f6f7f9; --card:#fff; --text:#1c2430; --muted:#6b7686; --line:#e3e7ee;
+        --ok:#2e9e5b; --warn:#e0a100; --crit:#e8710a; --over:#d12f3a; --accent:#3e6fb0; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#14181f; --card:#1d232d; --text:#e6eaf0; --muted:#8c97a8; --line:#2b3340; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,sans-serif; }
+.container { max-width:1000px; margin:0 auto; padding:24px 16px; }
+.header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.header h1 { margin:0; font-size:1.5rem; }
+.header-controls { display:flex; align-items:center; gap:12px; }
+.muted { color:var(--muted); font-weight:400; }
+.btn { background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:8px;
+       padding:6px 12px; cursor:pointer; text-decoration:none; font:inherit; font-size:.9rem; }
+.btn:hover { border-color:var(--accent); }
+.notice { margin:16px 0; padding:8px 12px; border-radius:8px; background:rgba(62,111,176,.12); color:var(--accent); }
+.error { margin:16px 0; padding:8px 12px; border-radius:8px; background:rgba(209,47,58,.12); color:var(--over); }
+.hidden { display:none; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:16px; }
+@media (max-width:480px) { .cards { grid-template-columns:1fr; } }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+.card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.card-head h2 { margin:0; font-size:1.1rem; text-transform:capitalize; }
+.warn-icon { color:var(--warn); margin-left:6px; }
+.alert { margin-bottom:12px; padding:8px 12px; border-radius:8px; background:rgba(209,47,58,.12); color:var(--over); }
+.meter { margin-bottom:12px; }
+.meter-head { display:flex; justify-content:space-between; font-size:.95rem; margin-bottom:4px; }
+.track { height:8px; border-radius:4px; background:var(--line); overflow:hidden; }
+.fill { height:100%; border-radius:4px; transition:width .6s ease; }
+.fill.ok { background:var(--ok); } .fill.warn { background:var(--warn); }
+.fill.crit { background:var(--crit); } .fill.over { background:var(--over); }
+.path { font:12px ui-monospace,monospace; }

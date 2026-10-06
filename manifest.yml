@@ -1,0 +1,6 @@
+---
+name: Storage
+description: Per-user and per-group storage quotas (toy data for now)
+icon: fa://hdd
+category: ""
+new_window: false
